@@ -1,0 +1,9 @@
+{
+  "dependencies": {
+    "prompt": "^1.3.0"
+  }
+}
+
+//  definisce dipendenza, tramite nome libreria (prompt), 
+//  e che vada bene da versione (in questo caso) 1.3.0 a 
+//  qualsiasi altra versione, entro 1.4.0;

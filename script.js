@@ -3,7 +3,7 @@ const model = require('./model.js');
 const fs = require('fs');
 const { json } = require('stream/consumers');
 
-const publicationArray = [];
+const publicationArray = loadData();; 
 
 console.log('benvenuto in book manager!')
 
@@ -253,5 +253,39 @@ function saveData(arrayToSave) {
     
     const jsonArray = JSON.stringify(arrayToSave); 
 
-    fs.writeFileSync('./data_file.json', jsonArray); 
-}
+    try {
+      fs.writeFileSync('./data_file.json', jsonArray); 
+    } catch (error) {
+      console.log('impossibile salvare');
+    }
+} 
+
+function loadData() {
+  let jsonArray;
+
+  try {
+    jsonArray = fs.readFileSync('./data_file.json', 'utf-8'); 
+  } catch (error) {
+    jsonArray = '[]';
+  } 
+
+  jsonArray = jsonArray.trim(); 
+  const array = []; 
+  if (jsonArray) {
+    array = JSON.parse(jsonArray); 
+  }
+//  trasforma stringa in oggetti
+  
+  const pubArray = []; 
+  
+  for (const obj of array) {
+    const publication = model.publicationFactory(obj); 
+    pubArray.push(publication);
+  }
+
+  return pubArray;
+} 
+
+//  applicazione console: 
+// inserire elemento; 
+// metter in lista elemento;

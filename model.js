@@ -101,5 +101,15 @@ class Magazine extends Pubblication{
 
 } 
 
+function publicationFactory(obj) {
+//  se ha obj.author è Book, senno Magazine; 
+    if (obj.author) {
+        return new Book(obj.title, obj.author, obj.publisher, obj.type, obj.price, obj.copies, obj.pagesNumber, obj.yop, obj.discount);
+    } else{ 
+        return new Magazine(obj.title, obj.publisher, obj.periodicity, obj.release, obj.type, obj.price, obj.copies, obj.discount, new Date(obj._releaseDate));
+    }
+}
+
 exports.Book = Book; 
-exports.Magazine = Magazine;
+exports.Magazine = Magazine; 
+exports.publicationFactory = publicationFactory;

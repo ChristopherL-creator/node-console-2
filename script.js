@@ -1,5 +1,7 @@
 const prompt = require('prompt');
-const model = require('./model.js')
+const model = require('./model.js'); 
+const fs = require('fs');
+const { json } = require('stream/consumers');
 
 const publicationArray = [];
 
@@ -189,7 +191,7 @@ function insertBookManger(err, result){
 
   publicationArray.push(book);
 
-  console.log(publicationArray);
+  saveData(publicationArray); 
 
   startMenu();
 
@@ -241,8 +243,15 @@ function insertMagazineManger(err, result) {
 
   publicationArray.push(magazine);
 
-  console.log(publicationArray);
+  saveData(publicationArray); 
 
   startMenu();
 
+} 
+
+function saveData(arrayToSave) {
+    
+    const jsonArray = JSON.stringify(arrayToSave); 
+
+    fs.writeFileSync('./data_file.json', jsonArray); 
 }

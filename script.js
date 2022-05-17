@@ -173,7 +173,10 @@ function insertBook() {
       }, 
         pagesNumber: {
           description: 'inserisci numero pagine', 
-      }, 
+      },  
+      yop: {
+        description: 'inserisci anno',
+      },
       discount: {
         description: 'inserisci sconto',
       }
@@ -186,7 +189,7 @@ function insertBook() {
 
 function insertBookManger(err, result){
 
-  const book = new model.Book(result.title, result.author, result.publisher, result.type, parseFloat(result.price), parseInt(result.copies), parseInt(result.pagesNumber), parseFloat(result.yop), parseFloat(result.discount));
+  const book = new model.Book(result.title, result.author, result.publisher, result.type, parseFloat(result.price), parseInt(result.copies), parseInt(result.pagesNumber), parseInt(result.yop), parseFloat(result.discount));
 
   publicationArray.push(book);
 

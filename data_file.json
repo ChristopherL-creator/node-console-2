@@ -25,7 +25,7 @@
     },
     {
         "title": "ccccccc",
-        "editor": "garzanti",
+        "editor": "Non disponibile",
         "type": "cccccc",
         "price": 3,
         "copies": 1234,
@@ -34,5 +34,41 @@
         "author": "ccccccc",
         "pagesNumber": 332,
         "yop": null
+    },
+    {
+        "title": "aaaaaa",
+        "editor": "Non disponibile",
+        "type": "dd",
+        "price": 46,
+        "copies": 432,
+        "discount": 3,
+        "tax": 10,
+        "author": "bbbbbb",
+        "pagesNumber": 2342,
+        "yop": null
+    },
+    {
+        "title": "aaaaa",
+        "editor": "Non disponibile",
+        "type": "t",
+        "price": 45,
+        "copies": 24,
+        "discount": 2223,
+        "tax": 10,
+        "author": "uuuu",
+        "pagesNumber": 432,
+        "yop": -1
+    },
+    {
+        "title": "jurassic",
+        "editor": "mond",
+        "type": "paura",
+        "price": 54,
+        "copies": 2154,
+        "discount": 3,
+        "tax": 10,
+        "author": "crick",
+        "pagesNumber": 234,
+        "yop": 1990
     }
 ]

@@ -89,6 +89,20 @@ function printArrayOrderdByTitle(){
 
 function comparePublicationByTitle(pub1, pub2){
   return pub1.title.localeCompare(pub2.title);
+} 
+
+function printArrayOrderdByPrice(){
+
+    const copy = [...publicationArray];
+  
+    copy.sort(comparePublicationByPrice);
+  
+    printArray(copy);
+} 
+
+  
+function comparePublicationByPrice(pub1, pub2){
+    return pub1.price - pub2.price;
 }
 
 function printArray(arrayToPrint){

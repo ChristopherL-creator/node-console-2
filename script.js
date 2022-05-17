@@ -156,11 +156,26 @@ function insertBook() {
         description: 'inserisci il titolo',
       },
         author: {
-        description: 'inserisci l\'autore',
+        description: 'inserisci autore',
       },
         publisher: {
         description: 'inserisci la casa editrice',
-      },
+      }, 
+        type: {
+          description: 'inserisci tipo',
+      }, 
+        price: {
+          description: 'inserisci prezzo',
+      }, 
+        copies: {
+            description: 'inserisci numero copie',
+      }, 
+        pagesNumber: {
+          description: 'inserisci numero pagine', 
+      }, 
+      discount: {
+        description: 'inserisci sconto',
+      }
     }
   };
 
@@ -170,7 +185,7 @@ function insertBook() {
 
 function insertBookManger(err, result){
 
-  const book = new model.Book(result.title, result.author, result.publisher);
+  const book = new model.Book(result.title, result.author, result.publisher, result.type, parseFloat(result.price), parseInt(result.copies), parseInt(result.pagesNumber), parseFloat(result.yop), parseFloat(result.discount));
 
   publicationArray.push(book);
 
@@ -179,7 +194,6 @@ function insertBookManger(err, result){
   startMenu();
 
 }
-
 
 function insertMagazine() {
 
@@ -191,10 +205,28 @@ function insertMagazine() {
         description: 'inserisci il titolo',
       },
       publisher: {
+        description: 'inserisci la casa editrice', 
+      }, 
+      publisher: {
         description: 'inserisci la casa editrice',
       },
-      release:{
-        description: 'inserisci il numero di uscita'
+      periodicity:{
+        description: 'inserisci cadenza',
+      }, 
+      release: {
+        description: 'inserisci numero',
+      },
+      type:{
+        description: 'inserisci il tipo',
+      }, 
+      price:{
+        description: 'inserisci il prezzo',
+      }, 
+      copies: {
+        description: 'inserisci numero copie',
+      },  
+      discount: {
+        description: 'inserisci sconto',
       }
     }
   };
@@ -205,7 +237,7 @@ function insertMagazine() {
 
 function insertMagazineManger(err, result) {
 
-  const magazine = new model.Magazine(result.title, result.publisher, result.release);
+  const magazine = new model.Magazine(result.title, result.publisher, result.periodicity, result.release, result.type, parseFloat(result.price), parseInt(result.copies), parseFloat(result.discount), parseFloat(result.releaseDate));
 
   publicationArray.push(magazine);
 

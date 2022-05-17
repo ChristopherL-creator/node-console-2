@@ -1,9 +1,8 @@
 const prompt = require('prompt');
 const model = require('./model.js'); 
 const fs = require('fs');
-const { json } = require('stream/consumers');
 
-const publicationArray = loadData();; 
+const publicationArray = loadData();
 
 console.log('benvenuto in book manager!')
 
@@ -270,7 +269,7 @@ function loadData() {
   } 
 
   jsonArray = jsonArray.trim(); 
-  const array = []; 
+  let array = []; 
   if (jsonArray) {
     array = JSON.parse(jsonArray); 
   }
